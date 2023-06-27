@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Manage the Header Border  */
+        .header {
+            position: absolute;
+            border: 1px solid;
+            width: 1365px;
+            margin-left: -9px;
+            margin-top: -9px;
+            height: 55px;
+            opacity: 0.2;
+            background: white;
+        }
+
+        /* Manage the Facebook-logo in Header Content  */
+        #Facebook-logo {
+            margin-top: -4px;
+            cursor: pointer;
+        }
+
+        /* Manage the search icon  */
+        #Search-icon {
+            position: absolute;
+            margin: 12px 0 0 33px;
+            width: 16px;
+            opacity: 0.6;
+            border-radius: 33px;
+        }
+
+        /* Manage the Search icon border  */
+        #border {
+            position: absolute;
+            margin: -46px 0 0 164px;
+            border: 1px solid rgb(235, 235, 235);
+            width: 40px;
+            height: 40px;
+            border-radius: 31px;
+            background-color: rgb(235, 235, 235);
+        }
+
+        #border:hover {
+            cursor: pointer;
+            background-color: lightgray;
+        }
+
+        /* Manage the combine-notification  */
+        .cover {
+            position: absolute;
+            margin-left: 1193px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 34px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        .cover1 {
+            position: absolute;
+            margin-left: 1244px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 32px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        #Massenger-logo {
+            position: absolute;
+            width: 24px;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+
+        .Message {
+            display: none;
+        }
+
+        .cover:hover .Message {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 107px;
+            text-align: center;
+            margin-left: -31px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+
+        #Notification-logo {
+            position: absolute;
+            width: 22px;
+            margin-top: 8px;
+            margin-left: 9px;
+            border-radius: 26px;
+        }
+
+        .Notification {
+            display: none;
+        }
+
+        .cover1:hover .Notification {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 117px;
+            text-align: center;
+            margin-left: -37px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        .cover2 {
+            position: absolute;
+            margin-left: 1286px;
+            margin-top: -43px;
+            cursor: pointer;
+        }
+
+        #Profile {
+            position: absolute;
+            width: 42px;
+            height: 36px;
+            margin-top: 0;
+            margin-left: 9px;
+            border-radius: 32px;
+        }
+
+        .Account {
+            display: none;
+        }
+
+        .cover2:hover .Account {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 93px;
+            text-align: center;
+            margin-left: -23px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------- */
+        /* Manage the left side bar  */
+        #L-side-Bar {
+            position: absolute;
+            border-right: 1px solid lightgray;
+            margin: 3px 0 0 -9px;
+            width: 56px;
+            height: 90vh;
+        }
+
+        /* Manage the Home icon  */
+        #Home {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 7px 0 0 5px;
+        }
+
+        #Home:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Home:hover #label-101 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 70px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Home-icon {
+            position: absolute;
+            margin: 10px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #Home-icon:hover #label-101 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 70px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-101 {
+            display: none;
+        }
+
+        /* Manage the Account  */
+        #Account {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 53px 0 0 5px;
+        }
+
+        #Account:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Account:hover #label-102 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Account-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+        }
+
+        #Account-icon:hover #label-102 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-102 {
+            display: none;
+        }
+
+        /* Manage the line of seperation  */
+        #L1 {
+            position: absolute;
+            margin: 106px 0 0 5px;
+            width: 46px;
+            opacity: 0.5;
+        }
+
+        /* Manage the Watch icon  */
+        #Watch {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 115px 0 0 5px;
+        }
+
+        #Watch:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Watch:hover #label-103 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Watch-icon {
+            position: absolute;
+            margin: 12px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #Watch-icon:hover #label-103 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-103 {
+            display: none;
+        }
+
+        /* Manage the Contact */
+        #Contact {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 163px 0 0 5px;
+        }
+
+        #Contact:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Contact:hover #label-104 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Contact-icon {
+            position: absolute;
+            margin: 12px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #Contact-icon:hover #label-104 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-104 {
+            display: none;
+        }
+
+        /* Manage the Marketplace  */
+        #Marketplace {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 211px 0 0 5px;
+        }
+
+        #Marketplace:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Marketplace:hover #label-105 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 110px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Marketplace-icon {
+            position: absolute;
+            margin: 12px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #Marketplace-icon:hover #label-105 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 110px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-105 {
+            display: none;
+        }
+
+        /* Manage the Gaming  */
+        #Gaming {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 259px 0 0 5px;
+        }
+
+        #Gaming:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Gaming:hover #label-106 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Gaming-icon {
+            position: absolute;
+            margin: 12px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #Gaming-icon:hover #label-106 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-106 {
+            display: none;
+        }
+
+        /* Manage the See-all  */
+        #See-all {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 307px 0 0 5px;
+        }
+
+        #See-all:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #See-all:hover #label-107 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #See-all-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+        }
+
+        #See-all-icon:hover #label-107 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 90px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-107 {
+            display: none;
+        }
+
+        /* Manage the line of seperation  */
+        #L2 {
+            position: absolute;
+            margin: 362px 0 0 5px;
+            width: 46px;
+            opacity: 0.5;
+        }
+
+        /* Manage the Hashirama Senju */
+        #Hashirama {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 374px 0 0 5px;
+        }
+
+        #Hashirama:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Hashirama:hover #label-108 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 120px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Hashirama-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+        }
+
+        #Hashirama-icon:hover #label-108 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 120px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-108 {
+            display: none;
+        }
+
+        /* Manage the Itachi Uchiha */
+        #Itachi {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 421px 0 0 5px;
+        }
+
+        #Itachi:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Itachi:hover #label-109 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Itachi-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+        }
+
+        #Itachi-icon:hover #label-109 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-109 {
+            display: none;
+        }
+
+        /* Manage the Kakashi Hatake */
+        #Kakashi {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 468px 0 0 5px;
+        }
+
+        #Kakashi:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Kakashi:hover #label-110 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Kakashi-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+        }
+
+        #Kakashi-icon:hover #label-110 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-110 {
+            display: none;
+        }
+
+
+        /* Manage the line of seperation  */
+        #L3 {
+            position: absolute;
+            margin: 518px 0 0 5px;
+            width: 46px;
+            opacity: 0.5;
+        }
+
+        /* Manage the Shortcuts */
+        #Shortcuts {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 57px;
+            margin: 525px 0 0 5px;
+        }
+
+        #Shortcuts:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        #Shortcuts:hover #label-111 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #Shortcuts-icon {
+            position: absolute;
+            margin: 9px 0 0 9px;
+            border-radius: 24px;
+            cursor: pointer;
+            width: 27px;
+            height: 27px;
+        }
+
+        #Shortcuts-icon:hover #label-111 {
+            display: block;
+            position: absolute;
+            margin-left: 59px;
+            margin-top: 9px;
+            border: 1px solid;
+            width: 100px;
+            text-align: center;
+            height: 24px;
+            font-size: 19px;
+            border-radius: 9px;
+            background-color: black;
+            color: white;
+            z-index: 500;
+        }
+
+        #label-111 {
+            display: none;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------- */
+        /* Manage the middel-left side bar  */
+        #MR-side-Bar {
+            position: absolute;
+            margin: 3px 0 0 47px;
+            width: 373px;
+            height: 90vh;
+            border-right: 1px solid lightgray;
+        }
+
+        /* Manage the titel  */
+        #Friends {
+            position: absolute;
+            margin: 10px 0 0 16px;
+            width: 86px;
+            height: 23px;
+            font-size: 29px;
+            font-weight: 600;
+            cursor: grab;
+        }
+
+        /* Manage the setting icon  */
+        #setting {
+            position: absolute;
+            margin: 11px 0 0 326px;
+            cursor: pointer;
+        }
+
+        /* ----------------------------------------------------------------------------------------------------- */
+        /* Manage the Home  */
+        #Block-1 {
+            position: absolute;
+            border: none;
+            margin: 61px 0 0 16px;
+            width: 338px;
+            height: 43px;
+        }
+
+        #pic-1 {
+            position: absolute;
+            margin: 6px 0 0 12px;
+            width: 38px;
+            border-radius: 27px;
+        }
+
+        #B-1 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+        }
+
+        #Block-1:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------ */
+        /* Manage the Friends request */
+        #Block-2 {
+            position: absolute;
+            margin: 113px 0 0 16px;
+            width: 338px;
+            height: 43px;
+        }
+
+        #user {
+            position: absolute;
+            width: 24px;
+            margin: 3px 0 0 7px;
+        }
+
+        #B-2 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+            color: black;
+        }
+
+        #circle {
+            position: absolute;
+            border: 1px solid rgb(238, 238, 238);
+            width: 38px;
+            height: 38px;
+            margin: 1px 0 0 10px;
+            border-radius: 49px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #angular {
+            position: absolute;
+            margin: 16px 0 0 310px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .dash {
+            position: absolute;
+            width: 6px;
+            margin: 16px 0 0 38px;
+            color: black;
+        }
+
+        #arrow-frd {
+            position: absolute;
+            margin: 15px 0 0 42px;
+            width: 3px;
+            height: 3px;
+            transform: rotate(45deg);
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        #Block-2:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------ */
+        /* Manage the Suggestion */
+        #Block-3 {
+            position: absolute;
+            margin: 165px 0 0 16px;
+            width: 338px;
+            height: 43px;
+        }
+
+        #circle-1 {
+            position: absolute;
+            border: 1px solid rgb(238, 238, 238);
+            width: 38px;
+            height: 38px;
+            margin: 1px 0 0 10px;
+            border-radius: 49px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #user-1 {
+            position: absolute;
+            width: 24px;
+            margin: 3px 0 0 7px;
+        }
+
+        #B-3 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+            color: black;
+        }
+
+        #angular-1 {
+            position: absolute;
+            margin: 16px 0 0 310px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        #Block-3:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        #plus {
+            position: absolute;
+            margin: 9px 0 0 39px;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------ */
+        /* Manage the All Friends */
+        #Block-4 {
+            position: absolute;
+            margin: 217px 0 0 16px;
+            width: 338px;
+            height: 43px;
+        }
+
+        #circle-2 {
+            position: absolute;
+            border: 1px solid rgb(238, 238, 238);
+            width: 38px;
+            height: 38px;
+            margin: 1px 0 0 10px;
+            border-radius: 49px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #user-2 {
+            position: absolute;
+            width: 24px;
+            margin: 3px 0 0 7px;
+        }
+
+        #B-4 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+            color: black;
+        }
+
+        #angular-2 {
+            position: absolute;
+            margin: 16px 0 0 310px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        #top-line {
+            position: absolute;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin: 12px 0 0 40px;
+            width: 6px;
+            height: 1px;
+        }
+
+        #bottom-line {
+            position: absolute;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin: 16px 0 0 40px;
+            width: 6px;
+            height: 1px;
+        }
+
+        #Block-4:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------ */
+        /* Manage the Birthday */
+        #Block-5 {
+            position: absolute;
+            margin: 269px 0 0 16px;
+            width: 338px;
+            height: 43px;
+            background-color: lightgray;
+        }
+
+        #circle-3 {
+            position: absolute;
+            border: 1px solid rgb(238, 238, 238);
+            width: 38px;
+            height: 38px;
+            margin: 1px 0 0 10px;
+            border-radius: 49px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #user-3 {
+            position: absolute;
+            width: 24px;
+            margin: 3px 0 0 7px;
+        }
+
+        #B-5 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+            color: black;
+        }
+
+        #Block-5:hover {
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------ */
+        /* Manage the Custom list */
+        #Block-6 {
+            position: absolute;
+            margin: 321px 0 0 16px;
+            width: 338px;
+            height: 43px;
+        }
+
+        #circle-4 {
+            position: absolute;
+            border: 1px solid rgb(238, 238, 238);
+            width: 38px;
+            height: 38px;
+            margin: 1px 0 0 10px;
+            border-radius: 49px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #user-4 {
+            position: absolute;
+            width: 24px;
+            margin: 3px 0 0 7px;
+        }
+
+        #B-6 {
+            position: absolute;
+            margin: 6px 0 0 58px;
+            font-size: 21px;
+            font-family: system-ui;
+            color: black;
+        }
+
+        #angular-4 {
+            position: absolute;
+            margin: 16px 0 0 310px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        #top-line-1 {
+            position: absolute;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin: 12px 0 0 40px;
+            width: 6px;
+            height: 1px;
+        }
+
+        #bottom-line-1 {
+            position: absolute;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin: 16px 0 0 40px;
+            width: 6px;
+            height: 1px;
+        }
+
+        #Block-6:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the main bar  */
+        #main {
+            position: absolute;
+            border: 1px solid lightgray;
+            margin: 3px 0 0 420px;
+            width: 936px;
+            height: 567px;
+            background-color: rgb(240, 240, 240);
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-101 */
+        #Container-101 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 26px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head {
+            position: absolute;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 13px 0 0 25px;
+        }
+
+        /* Manage the profile */
+        #profile {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border-radius: 33px;
+            margin: 47px 0 0 25px;
+        }
+
+        /* Manage the label */
+        #label {
+            position: absolute;
+            margin: 61px 0 0 90px;
+            font-size: 20px;
+        }
+
+        /* Manage the DOB */
+        #DOB {
+            position: absolute;
+            margin: 84px 0 0 92px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* Manage the AGE */
+        #AGE {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-102 */
+        #Container-102 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-1 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-1 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-1 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-1 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-103 */
+        #Container-103 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-2 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-2 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-2 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-2 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-104 */
+        #Container-104 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-3 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-3 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-3 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-3 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-105 */
+        #Container-105 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-4 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-4 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-4 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-4 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-106 */
+        #Container-106 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-5 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-5 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-5 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-5 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-107 */
+        #Container-107 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-6 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-6 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-6 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-6 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-108 */
+        #Container-108 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-7 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-7 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-7 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-7 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-109 */
+        #Container-109 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-8 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-8 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-8 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-8 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-110 */
+        #Container-110 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 36px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-9 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-9 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-9 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-9 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-111 */
+        #Container-111 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 35px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-10 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-10 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-10 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-10 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Container-112 */
+        #Container-112 {
+            border: 1px solid #fff;
+            width: 394px;
+            margin: auto;
+            height: 118px;
+            margin-top: 38px;
+            border-radius: 12px;
+            background-color: #fff;
+        }
+
+        /* Manage the head  */
+        #head-11 {
+            position: absolute;
+            margin: 8px 0 0 26px;
+            font-size: 21px;
+        }
+
+        /* Manage the profile */
+        #profile-11 {
+            position: absolute;
+            font-size: 19px;
+            width: 57px;
+            height: 57px;
+            border-radius: 44px;
+            margin: 39px 0 0 30px;
+        }
+
+        /* Manage the label-1  */
+        #label-11 {
+            position: absolute;
+            margin: 54px 0 0 98px;
+            font-size: 20px;
+        }
+
+        /* Manage the AGE */
+        #AGE-11 {
+            position: absolute;
+            margin: 86px 0 0 346px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Construction of Header+Border  -->
+    <div class="header"></div>
+
+    <!-- Construction of Facebook logo  -->
+    <a href="https://www.facebook.com/"><img src="facebook-logo-1.png" alt="Facebook-logo" id="Facebook-logo"></a>
+
+    <!-- Construction of search-icon  -->
+    <div id="border"></div>
+    <img src="sreach (3).png" alt="search-icon" id="Search-icon">
+
+    <!-- Construction of combine-notification  -->
+    <div class="cover"><img src="Massenger-logo.png" id="Massenger-logo">
+        <div class="Message">Messenger</div>
+    </div>
+
+    <div class="cover1"><img src="Notification-logo.png" id="Notification-logo">
+        <div class="Notification">Notification</div>
+    </div>
+
+    <div class="cover2"><img src="WALLPAPER.png" id="Profile">
+        <div class="Account">Account</div>
+    </div>
+
+    <!-- Construction of left-side-bar  -->
+    <div id="L-side-Bar">
+
+        <!-- Construction of Home icon  -->
+        <div id="Home">
+            <img src="Home.png" id="Home-icon">
+            <span id="label-101">Home</span>
+        </div>
+
+        <!-- Construction of Account icon  -->
+        <div id="Account">
+            <img src="WALLPAPER.png" id="Account-icon">
+            <span id="label-102">Account</span>
+        </div>
+
+        <!-- Construction of line of seperation  -->
+        <hr id="L1">
+
+        <!-- Construction of Watch icon  -->
+        <div id="Watch">
+            <img src="video.png" id="Watch-icon">
+            <span id="label-103">Watch</span>
+        </div>
+
+        <!-- Construction of Contact icon  -->
+        <div id="Contact">
+            <img src="Contact.png" id="Contact-icon">
+            <span id="label-104">Contact</span>
+        </div>
+
+        <!-- Construction of Marketplace icon  -->
+        <div id="Marketplace">
+            <img src="Market-icon.png" id="Marketplace-icon">
+            <span id="label-105">Marketplace</span>
+        </div>
+
+        <!-- Construction of Gaming icon  -->
+        <div id="Gaming">
+            <img src="Game-pad.png" id="Gaming-icon">
+            <span id="label-106">Gaming</span>
+        </div>
+
+        <!-- Construction of See-all icon  -->
+        <div id="See-all">
+            <img src="See-all.png" id="See-all-icon">
+            <span id="label-107">See All</span>
+        </div>
+
+        <!-- Construction of line of seperation  -->
+        <hr id="L2">
+
+        <!-- Construction of Hashirama senju  -->
+        <div id="Hashirama">
+            <img src="Hashirama Senju.jpg" id="Hashirama-icon">
+            <span id="label-108">Hashirama</span>
+        </div>
+
+        <!-- Construction of Itachi Uchiha  -->
+        <div id="Itachi">
+            <img src="Nagato.jpg" id="Itachi-icon">
+            <span id="label-109">Nagato</span>
+        </div>
+
+        <!-- Construction of Kakashi Hatake  -->
+        <div id="Kakashi">
+            <img src="Kakashi Hatake.png" id="Kakashi-icon">
+            <span id="label-110">Kakashi</span>
+        </div>
+
+        <!-- Construction of line of seperation  -->
+        <hr id="L3">
+
+        <!-- Construction of Shortcuts  -->
+        <div id="Shortcuts">
+            <img src="short-cut.png" id="Shortcuts-icon">
+            <span id="label-111">Shortcuts</span>
+        </div>
+    </div>
+
+    <!-- Construction of middel-left side-bar  -->
+    <div id="MR-side-Bar">
+
+        <!-- Construction of titel  -->
+        <span id="Friends">Friends</span>
+        <img src="setting.png" id="setting">
+
+        <!-- Construction of Home icon  -->
+        <div id="Block-1">
+            <img src="Contact.png" id="pic-1">
+            <span id="B-1">Home</span>
+        </div>
+
+        <!-- Construction of Friends request  -->
+        <a href="friends-request.html">
+            <div id="Block-2">
+
+                <div id="circle">
+                    <img src="user.svg" id="user">
+                </div>
+
+                <span id="B-2">Friends requests</span>
+
+                <div id="angular"></div>
+
+                <hr class="dash">
+                <div id="arrow-frd"></div>
+            </div>
+        </a>
+
+        <!-- Construction of Suggestion  -->
+        <a href="Suggestion.html">
+            <div id="Block-3">
+                <div id="circle-1">
+                    <img src="user.svg" id="user-1">
+                </div>
+                <span id="B-3">Suggestion</span>
+
+                <div id="angular-1"></div>
+
+                <span id="plus">+</span>
+            </div>
+        </a>
+
+        <!-- Construction of All Friends  -->
+        <a href="All-friends.html">
+            <div id="Block-4">
+                <div id="circle-2">
+                    <img src="user.svg" id="user-2">
+                </div>
+                <span id="B-4">All Friends</span>
+
+                <div id="angular-2"></div>
+
+                <div id="top-line"></div>
+                <div id="bottom-line"></div>
+            </div>
+        </a>
+
+        <!-- Construction of Birthday  -->
+        <div id="Block-5">
+            <div id="circle-3">
+                <img src="gift.svg" id="user-3">
+            </div>
+            <span id="B-5">Birthdays</span>
+
+        </div>
+
+        <!-- Construction of Custom list  -->
+        <div id="Block-6">
+            <div id="circle-4">
+                <img src="user.svg" id="user-4">
+            </div>
+            <span id="B-6">Custom lists</span>
+
+            <div id="angular-4"></div>
+
+            <div id="top-line-1"></div>
+            <div id="bottom-line-1"></div>
+        </div>
+
+    </div>
+
+    <!-- Construction of Main side bar  -->
+    <div id="main">
+
+        <!-- Construction of 1st block  -->
+        <div id="Container-101">
+            <span id="head">Upcoming Birthdays</span>
+            <img src="d:\My Files\FACEBOOK\WALLPAPER.png" id="profile">
+            <span id="label">Uchiha Itachi</span>
+            <span id="DOB">9 June 1896</span>
+            <span id="AGE">127 Years</span>
+        </div>
+
+        <div id="Container-102">
+            <span id="head-1">10 October</span>
+            <span id="label-1">Uzumaki Naruto</span>
+            <img src="d:\My Files\FACEBOOK\Naruto Uzumaki.jpg" id="profile-1">
+            <span id="AGE-1">28 Years</span>
+        </div>
+
+        <div id="Container-103">
+            <span id="head-2">10 February</span>
+            <span id="label-2">Uchiha Obito</span>
+            <img src="d:\My Files\FACEBOOK\Obito Uchiha.png" id="profile-2">
+            <span id="AGE-2">36 Years</span>
+        </div>
+
+        <div id="Container-104">
+            <span id="head-3">24 December</span>
+            <span id="label-3">Uchiha Madara</span>
+            <img src="d:\My Files\FACEBOOK\Madara-Uchiha.jpg" id="profile-3">
+            <span id="AGE-3">148 Years</span>
+        </div>
+
+        <div id="Container-105">
+            <span id="head-4">23 October</span>
+            <span id="label-4">Senju Hashirama</span>
+            <img src="d:\My Files\FACEBOOK\Hashirama Senju.jpg" id="profile-4">
+            <span id="AGE-4">170 Years</span>
+        </div>
+
+        <div id="Container-106">
+            <span id="head-5">27 October</span>
+            <span id="label-5">Orochimaru</span>
+            <img src="d:\My Files\FACEBOOK\Orochimaru.jpg" id="profile-5">
+            <span id="AGE-5">154 Years</span>
+        </div>
+
+        <div id="Container-107">
+            <span id="head-6">27 December</span>
+            <span id="label-6">Huga Hinata</span>
+            <img src="d:\My Files\FACEBOOK\Hinata Hyuga.jpg" id="profile-6">
+            <span id="AGE-6">32 Years</span>
+        </div>
+
+        <div id="Container-108">
+            <span id="head-7">11 November</span>
+            <span id="label-7">Jiraya</span>
+            <img src="d:\My Files\FACEBOOK\Jiraya.png" id="profile-7">
+            <span id="AGE-7">155 Years</span>
+        </div>
+
+        <div id="Container-109">
+            <span id="head-8">3 July</span>
+            <span id="label-8">Huga Negi</span>
+            <img src="d:\My Files\FACEBOOK\Neji Hyuga.jpg" id="profile-8">
+            <span id="AGE-8">34 Years</span>
+        </div>
+
+        <div id="Container-110">
+            <span id="head-9">22 September</span>
+            <span id="label-9">Nara Shikamaru</span>
+            <img src="d:\My Files\FACEBOOK\Shikamaru Nara.jpg" id="profile-9">
+            <span id="AGE-9">35 Years</span>
+        </div>
+
+        <div id="Container-111">
+            <span id="head-10">27 November</span>
+            <span id="label-10">Rock Lee</span>
+            <img src="d:\My Files\FACEBOOK\Rock Lee.jpg" id="profile-10">
+            <span id="AGE-10">34 Years</span>
+        </div>
+
+        <div id="Container-112">
+            <span id="head-11">19 January</span>
+            <span id="label-11">Gara</span>
+            <img src="d:\My Files\FACEBOOK\Gara.jpg" id="profile-11">
+            <span id="AGE-11">33 Years</span>
+        </div>
+    </div>
+</body>
+
+</html>

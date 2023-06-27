@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Friends</title>
+    <link rel="icon" href="facebook-logo.png">
+    <style>
+        /* Manage the Header Border  */
+        .header {
+            position: absolute;
+            border: 1px solid;
+            width: 1365px;
+            margin-left: -9px;
+            margin-top: -9px;
+            height: 55px;
+            opacity: 0.2;
+            background: white;
+        }
+
+        /* Manage the Facebook-logo in Header Content  */
+        #Facebook-logo {
+            margin-top: -4px;
+            cursor: pointer;
+        }
+
+        /* Manage the Search-BAR  */
+        #Search-BAR {
+            position: absolute;
+            margin-top: 1px;
+            height: 31px;
+            width: 432px;
+            margin-left: 21%;
+            border-radius: 57px;
+            outline: none;
+            background: rgb(240, 240, 240);
+            border-top: 1px solid rgb(240, 240, 240);
+            border-bottom: 1px solid rgb(240, 240, 240);
+            border-left: 1px solid rgb(240, 240, 240);
+            border-right: 1px solid rgb(240, 240, 240);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Manage the Search-BAR Hover */
+        #Search-BAR:hover {
+            background: rgb(227, 227, 227);
+        }
+
+        /* Manage the Search-BAR  */
+        #Search-BAR::placeholder {
+            margin-left: 32px;
+            position: absolute;
+            margin-top: -1px;
+            font-size: 17px;
+            font-family: sans-serif;
+        }
+
+        /* Manage the Search-icon  */
+        #Search-icon {
+            position: absolute;
+            margin-left: 298px;
+            z-index: 100;
+            margin-top: 11px;
+            width: 17px;
+            opacity: 0.6;
+        }
+
+        /* Manage the combine-notification  */
+        .cover {
+            position: absolute;
+            margin-left: 1193px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 34px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        .cover1 {
+            position: absolute;
+            margin-left: 1244px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 32px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        #Massenger-logo {
+            position: absolute;
+            width: 24px;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+
+        .Message {
+            display: none;
+        }
+
+        .cover:hover .Message {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 107px;
+            text-align: center;
+            margin-left: -31px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+
+        #Notification-logo {
+            position: absolute;
+            width: 22px;
+            margin-top: 8px;
+            margin-left: 9px;
+            border-radius: 26px;
+        }
+
+        .Notification {
+            display: none;
+        }
+
+        .cover1:hover .Notification {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 117px;
+            text-align: center;
+            margin-left: -37px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        .cover2 {
+            position: absolute;
+            margin-left: 1286px;
+            margin-top: -43px;
+            cursor: pointer;
+        }
+
+        #Profile {
+            position: absolute;
+            width: 42px;
+            height: 36px;
+            margin-top: 0;
+            margin-left: 9px;
+            border-radius: 32px;
+        }
+
+        .Account {
+            display: none;
+        }
+
+        .cover2:hover .Account {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 93px;
+            text-align: center;
+            margin-left: -23px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Leaft side bar */
+        #L-sidebar {
+            position: absolute;
+            border: 1px solid;
+            margin: 47px 0 0 -154px;
+            width: 58px;
+            height: 568px;
+            border-right: 1px solid lightgrey;
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Home Icon  */
+        #border-1 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 7px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Home {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-1:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border {
+            display: none;
+        }
+
+        #titel {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-1:hover #sub-border {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 63px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Account Icon  */
+        #border-2 {
+            position: absolute;
+            width: 49px;
+            height: 45px;
+            margin: 48px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Account {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #border-2:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-1 {
+            display: none;
+        }
+
+        #titel-1 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-2:hover #sub-border-1 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir {
+            position: absolute;
+            width: 50px;
+            margin: 96px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the watch  */
+        #border-3 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 101px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Watch {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-3:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-2 {
+            display: none;
+        }
+
+        #titel-2 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-3:hover #sub-border-2 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 63px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Friends  */
+        #border-4 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 142px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Friend {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-4:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-3 {
+            display: none;
+        }
+
+        #titel-3 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-4:hover #sub-border-3 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Market  */
+        #border-5 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 183px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Market {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-5:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-4 {
+            display: none;
+        }
+
+        #titel-4 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-5:hover #sub-border-4 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Gaming  */
+        #border-6 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 224px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Gaming {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-6:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-5 {
+            display: none;
+        }
+
+        #titel-5 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-6:hover #sub-border-5 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Gaming  */
+        #border-7 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 265px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #See-All {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-7:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-6 {
+            display: none;
+        }
+
+        #titel-6 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-7:hover #sub-border-6 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-1 {
+            position: absolute;
+            width: 50px;
+            margin: 307px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-1  */
+        #account-1 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 314px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Ace {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-1:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name {
+            display: none;
+        }
+
+        #Name-1 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-1:hover #Account-name {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 95px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-2  */
+        #account-2 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 357px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Sec {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-2:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-1 {
+            display: none;
+        }
+
+        #Name-2 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-2:hover #Account-name-1 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-3  */
+        #account-3 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 400px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Tri {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-3:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-2 {
+            display: none;
+        }
+
+        #Name-3 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-3:hover #Account-name-2 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the See All Groups  */
+        #account-4 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 443px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Poly {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-4:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-3 {
+            display: none;
+        }
+
+        #Name-4 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-4:hover #Account-name-3 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 125px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-2 {
+            position: absolute;
+            width: 50px;
+            margin: 485px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the See All Groups  */
+        #account-5 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 505px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Penta {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-5:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-4 {
+            display: none;
+        }
+
+        #Name-5 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-5:hover #Account-name-4 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 125px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Middel Leaft side bar */
+        #ML-sidebar {
+            position: absolute;
+            border: 1px solid;
+            width: 360px;
+            height: 568px;
+            margin: 3px 0 0 48px;
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+            border-right: 1px solid lightgrey;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the inside div  */
+        #inside {
+            position: fixed;
+            width: 335px;
+            height: 71px;
+            z-index: 900;
+            background-color: white;
+            margin: 2px 0 0 3px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Leaft arrow (<--)  */
+        #round {
+            position: absolute;
+            border: none;
+            margin: 18px 0 0 17px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        #head {
+            position: absolute;
+            margin: 15px 0 0 10px;
+            width: 9px;
+            height: 9px;
+            transform: rotate(45deg);
+            border-bottom: 1px solid rgb(141, 141, 141);
+            border-left: 1px solid rgb(141, 141, 141);
+        }
+
+        #tail {
+            position: absolute;
+            width: 20px;
+            margin: 19px 0 0 9px;
+            border-top: 1px solid rgb(141, 141, 141);
+            border-bottom: 1px solid rgb(141, 141, 141);
+        }
+
+        #round:hover {
+            background-color: rgb(223, 223, 223);
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the friends  */
+        #friends {
+            position: absolute;
+            margin: 16px 0 0 67px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        #friends:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the heading */
+        #heading {
+            position: absolute;
+            margin: 34px 0 0 67px;
+            font-size: 27px;
+            font-style: revert;
+            font-weight: 700;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-3 {
+            position: absolute;
+            margin: 71px 0 0 17px;
+            width: 296px;
+            z-index: 50000;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the scroll items  */
+        #scroll {
+            position: absolute;
+            overflow: hidden;
+            overflow-y: scroll;
+            width: 342px;
+            height: 493px;
+            margin: 75px 0 0 12px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Search icon  */
+        #search {
+            position: absolute;
+            margin: 19px 0px 0 25px;
+            z-index: 1;
+            width: 14px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Search bar  */
+        #S-F {
+            position: absolute;
+            margin: 11px 0 0 14px;
+            width: 282px;
+            height: 28px;
+            border-radius: 20px;
+            outline: none;
+            background: rgb(240, 240, 240);
+            border: none;
+            text-align: center;
+        }
+
+        #S-F::placeholder {
+            position: absolute;
+            margin-left: 30px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-4 {
+            position: absolute;
+            margin: 53px 0 0 6px;
+            width: 296px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-1 */
+        #circle-1 {
+            position: absolute;
+            margin: 76px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-1 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-1 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-1 {
+            position: absolute;
+            margin: 96px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-101 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-102 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-103 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-1:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-1:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-2 */
+        #circle-2 {
+            position: absolute;
+            margin: 156px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-2 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-2 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-2 {
+            position: absolute;
+            margin: 175px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-104 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-105 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-106 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-2:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-2:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-3 */
+        #circle-3 {
+            position: absolute;
+            margin: 236px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-3 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-3 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-3 {
+            position: absolute;
+            margin: 254px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-107 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-108 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-109 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-3:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-3:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-4 */
+        #circle-4 {
+            position: absolute;
+            margin: 316px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-4 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-4 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-4 {
+            position: absolute;
+            margin: 333px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-110 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-111 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-112 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-4:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-4:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-5 */
+        #circle-5 {
+            position: absolute;
+            margin: 396px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-5 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-5 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-5 {
+            position: absolute;
+            margin: 412px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-113 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-114 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-115 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-5:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-5:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-6 */
+        #circle-6 {
+            position: absolute;
+            margin: 476px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-6 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-6 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-6 {
+            position: absolute;
+            margin: 491px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-116 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-117 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-118 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-6:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-6:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-7 */
+        #circle-7 {
+            position: absolute;
+            margin: 556px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-7 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-7 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-7 {
+            position: absolute;
+            margin: 570px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-119 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-120 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-121 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-7:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-7:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-8 */
+        #circle-8 {
+            position: absolute;
+            margin: 636px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-8 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-8 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-8 {
+            position: absolute;
+            margin: 649px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-122 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-123 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-124 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-8:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-8:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the profile-9 */
+        #circle-9 {
+            position: absolute;
+            margin: 716px 0 0 0;
+            width: 316px;
+            height: 69px;
+            border-radius: 11px;
+        }
+
+        #Pro-9 {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            margin: 4px 0 0 7px;
+            border-radius: 38px;
+        }
+
+        #Naam-9 {
+            position: absolute;
+            margin: 19px 0 0 88px;
+            font-size: 21px;
+        }
+
+        #box-9 {
+            position: absolute;
+            margin: 728px 0 0 273px;
+            width: 25px;
+            height: 25px;
+            border-radius: 27px;
+        }
+
+        #dot-125 {
+            position: absolute;
+            margin: 11px 0 0 4px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-126 {
+            position: absolute;
+            margin: 11px 0 0 10px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #dot-127 {
+            position: absolute;
+            margin: 11px 0 0 17px;
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            border-radius: 24px;
+            border: 1px solid;
+        }
+
+        #circle-9:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        #box-9:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Right side bar */
+        #R-sidebar {
+            position: absolute;
+            border: 1px solid;
+            margin: 3px 0 0 408px;
+            width: 948px;
+            height: 568px;
+            border-left: 1px solid lightgray;
+            border-top: none;
+            border-bottom: none;
+            border-right: none;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #people {
+            width: 210px;
+            margin: auto;
+            display: block;
+            margin-top: 145px;
+        }
+
+        #footer {
+            position: absolute;
+            font-size: 23px;
+            font-weight: 700;
+            margin: 5px 0 0 265px;
+            color: rgb(135, 135, 135);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Construction of Header+Border  -->
+    <div class="header"></div>
+
+    <!-- Construction of Facebook logo  -->
+    <a href="https://www.facebook.com/"><img src="facebook-logo-1.png" alt="Facebook-logo" id="Facebook-logo"></a>
+
+    <!-- Construction of search-icon  -->
+    <img src="sreach (3).png" alt="search-icon" id="Search-icon">
+
+    <!-- Construction of Search-BAR  -->
+    <input type="url" placeholder="Search Facebook" id="Search-BAR">
+
+    <!-- Construction of combine-notification  -->
+    <div class="cover"><img src="Massenger-logo.png" id="Massenger-logo">
+        <div class="Message">Messenger</div>
+    </div>
+
+    <div class="cover1"><img src="Notification-logo.png" id="Notification-logo">
+        <div class="Notification">Notification</div>
+    </div>
+
+    <div class="cover2"><img src="WALLPAPER.png" id="Profile">
+        <div class="Account">Account</div>
+    </div>
+
+    <!-- Construction of Leaft side bar  -->
+    <dvi id="L-sidebar">
+
+        <!-- Construction of Home-icon  -->
+        <div id="border-1">
+            <img src="Home.png" id="Home">
+            <div id="sub-border"><span id="titel">Home</span></div>
+        </div>
+
+        <!-- Construction of Account-icon  -->
+        <div id="border-2">
+            <img src="WALLPAPER.png" id="Account">
+            <div id="sub-border-1"><span id="titel-1">Account</span></div>
+        </div>
+
+        <!-- Construction of Line  -->
+        <hr id="lakir">
+
+        <!-- Construction of Watch -->
+        <div id="border-3">
+            <img src="video.png" id="Watch">
+            <div id="sub-border-2"><span id="titel-2">Watch</span></div>
+        </div>
+
+        <!-- Construction of Friends -->
+        <div id="border-4">
+            <img src="Contact.png" id="Friend">
+            <div id="sub-border-3"><span id="titel-3">Friends</span></div>
+        </div>
+
+        <!-- Construction of Market-icon -->
+        <div id="border-5">
+            <img src="Market-icon.png" id="Market">
+            <div id="sub-border-4"><span id="titel-4">Market</span></div>
+        </div>
+
+        <!-- Construction of Gaming -->
+        <div id="border-6">
+            <img src="Game-pad.png" id="Gaming">
+            <div id="sub-border-5"><span id="titel-5">Gaming</span></div>
+        </div>
+
+        <!-- Construction of See All -->
+        <div id="border-7">
+            <img src="See-all.png" id="See-All">
+            <div id="sub-border-6"><span id="titel-6">See All</span></div>
+        </div>
+
+        <!-- Construction line -->
+        <hr id="lakir-1">
+
+        <!-- Construction of Account-1  -->
+        <div id="account-1">
+            <img src="Tobirama Senju.jpg" id="Ace">
+            <div id="Account-name"><span id="Name-1">Tobirama Senju</span></div>
+        </div>
+
+        <!-- Construction of Account-2  -->
+        <div id="account-2">
+            <img src="Temari.jpg" id="Sec">
+            <div id="Account-name-1"><span id="Name-2">Temari</span></div>
+        </div>
+
+        <!-- Construction of Account-3  -->
+        <div id="account-3">
+            <img src="Tanjiro.jpg" id="Tri">
+            <div id="Account-name-2"><span id="Name-3">Tanjiro</span></div>
+        </div>
+
+        <!-- Construction of See All Groups  -->
+        <div id="account-4">
+            <img src="Contact.png" id="Poly">
+            <div id="Account-name-3"><span id="Name-4">See All Groups</span></div>
+        </div>
+
+        <!-- Construction line -->
+        <hr id="lakir-2">
+
+        <!-- Construction of See All Shortcut  -->
+        <div id="account-5">
+            <img src="short-cut.png" id="Penta">
+            <div id="Account-name-4"><span id="Name-5">See All Shortcut</span></div>
+        </div>
+    </dvi>
+
+    <!-- Construction of Middel left side Bar -->
+    <div id="ML-sidebar">
+
+        <!-- Construction of line  -->
+        <hr id="lakir-3">
+
+        <div id="inside">
+            <!-- Construction of Leaft arrow (<--)  -->
+            <div id="round">
+                <div id="head"></div>
+                <div id="tail"></div>
+            </div>
+
+            <!-- Construction of Friends option  -->
+            <a href="friends.html"><span id="friends">Friends</span></a>
+
+            <!-- Construction of Heading -->
+            <span id="heading">All Friends</span>
+        </div>
+
+        <!-- Construction of Scroll Items  -->
+        <div id="scroll">
+            <!-- Construction of Search-BAR  -->
+            <img src="sreach (3).png" id="search">
+            <input type="search" placeholder="Search Friends" id="S-F">
+
+            <!-- Construction of line  -->
+            <hr id="lakir-4">
+
+            <!-- Construction of Profile-1  -->
+            <div id="circle-1">
+                <img src="Yorichi.jpg" id="Pro-1">
+                <span id="Naam-1">Yorichi</span>
+            </div>
+            <div id="box-1">
+                <div id="dot-101"></div>
+                <div id="dot-102"></div>
+                <div id="dot-103"></div>
+            </div>
+
+            <!-- Construction of Profile-2  -->
+            <div id="circle-2">
+                <img src="Zinestu.jpg" id="Pro-2">
+                <span id="Naam-2">Zinestu</span>
+            </div>
+            <div id="box-2">
+                <div id="dot-104"></div>
+                <div id="dot-105"></div>
+                <div id="dot-106"></div>
+            </div>
+
+            <!-- Construction of Profile-3  -->
+            <div id="circle-3">
+                <img src="Akaza.jpg" id="Pro-3">
+                <span id="Naam-3">Akaza</span>
+            </div>
+            <div id="box-3">
+                <div id="dot-107"></div>
+                <div id="dot-108"></div>
+                <div id="dot-109"></div>
+            </div>
+
+            <!-- Construction of Profile-4  -->
+            <div id="circle-4">
+                <img src="Kakashi Hatake.png" id="Pro-4">
+                <span id="Naam-4">Kakashi Hatake</span>
+            </div>
+            <div id="box-4">
+                <div id="dot-110"></div>
+                <div id="dot-111"></div>
+                <div id="dot-112"></div>
+            </div>
+
+            <!-- Construction of Profile-5  -->
+            <div id="circle-5">
+                <img src="Kokushibo.jpg" id="Pro-5">
+                <span id="Naam-5">Kokushibo</span>
+            </div>
+            <div id="box-5">
+                <div id="dot-113"></div>
+                <div id="dot-114"></div>
+                <div id="dot-115"></div>
+            </div>
+
+            <!-- Construction of Profile 6  -->
+            <div id="circle-6">
+                <img src="Madara-Uchiha.jpg" id="Pro-6">
+                <span id="Naam-6">Madara-Uchiha</span>
+            </div>
+            <div id="box-6">
+                <div id="dot-116"></div>
+                <div id="dot-117"></div>
+                <div id="dot-118"></div>
+            </div>
+
+            <!-- Construction of Profile-7  -->
+            <div id="circle-7">
+                <img src="Muzan.jpg" id="Pro-7">
+                <span id="Naam-7">Muzan</span>
+            </div>
+            <div id="box-7">
+                <div id="dot-119"></div>
+                <div id="dot-120"></div>
+                <div id="dot-121"></div>
+            </div>
+
+            <!-- Construction of Profile-8  -->
+            <div id="circle-8">
+                <img src="Nagato.jpg" id="Pro-8">
+                <span id="Naam-8">Nagato</span>
+            </div>
+            <div id="box-8">
+                <div id="dot-122"></div>
+                <div id="dot-123"></div>
+                <div id="dot-124"></div>
+            </div>
+
+            <!-- Construction of Profile-9  -->
+            <div id="circle-9">
+                <img src="Tengen.jpg" id="Pro-9">
+                <span id="Naam-9">Tengen </span>
+            </div>
+            <div id="box-9">
+                <div id="dot-125"></div>
+                <div id="dot-126"></div>
+                <div id="dot-127"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Construction of Right side bar -->
+    <div id="R-sidebar">
+        <img src="people.png" id="people">
+        <span id="footer">select people's names to preview their profile</span>
+    </div>
+</body>
+
+</html>

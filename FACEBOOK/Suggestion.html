@@ -1,0 +1,3323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion</title>
+    <link rel="icon" href="facebook-logo.png">
+    <style>
+        /* Manage the Header Border  */
+        .header {
+            position: absolute;
+            border: 1px solid;
+            width: 1365px;
+            margin-left: -9px;
+            margin-top: -9px;
+            height: 55px;
+            opacity: 0.2;
+            background: white;
+        }
+
+        /* Manage the Facebook-logo in Header Content  */
+        #Facebook-logo {
+            margin-top: -4px;
+            cursor: pointer;
+        }
+
+        /* Manage the Search-BAR  */
+        #Search-BAR {
+            position: absolute;
+            margin-top: 1px;
+            height: 31px;
+            width: 432px;
+            margin-left: 21%;
+            border-radius: 57px;
+            outline: none;
+            background: rgb(240, 240, 240);
+            border-top: 1px solid rgb(240, 240, 240);
+            border-bottom: 1px solid rgb(240, 240, 240);
+            border-left: 1px solid rgb(240, 240, 240);
+            border-right: 1px solid rgb(240, 240, 240);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Manage the Search-BAR Hover */
+        #Search-BAR:hover {
+            background: rgb(227, 227, 227);
+        }
+
+        /* Manage the Search-BAR  */
+        #Search-BAR::placeholder {
+            margin-left: 32px;
+            position: absolute;
+            margin-top: -1px;
+            font-size: 17px;
+            font-family: sans-serif;
+        }
+
+        /* Manage the Search-icon  */
+        #Search-icon {
+            position: absolute;
+            margin-left: 298px;
+            z-index: 100;
+            margin-top: 11px;
+            width: 17px;
+            opacity: 0.6;
+        }
+
+        /* Manage the combine-notification  */
+        .cover {
+            position: absolute;
+            margin-left: 1193px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 34px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        .cover1 {
+            position: absolute;
+            margin-left: 1244px;
+            margin-top: -43px;
+            border-top: 1px solid rgb(227, 227, 227);
+            border-bottom: 1px solid rgb(227, 227, 227);
+            border-left: 1px solid rgb(227, 227, 227);
+            border-right: 1px solid rgb(227, 227, 227);
+            width: 42px;
+            height: 36px;
+            border-radius: 32px;
+            background: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        #Massenger-logo {
+            position: absolute;
+            width: 24px;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+
+        .Message {
+            display: none;
+        }
+
+        .cover:hover .Message {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 107px;
+            text-align: center;
+            margin-left: -31px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+
+        #Notification-logo {
+            position: absolute;
+            width: 22px;
+            margin-top: 8px;
+            margin-left: 9px;
+            border-radius: 26px;
+        }
+
+        .Notification {
+            display: none;
+        }
+
+        .cover1:hover .Notification {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 117px;
+            text-align: center;
+            margin-left: -37px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        .cover2 {
+            position: absolute;
+            margin-left: 1286px;
+            margin-top: -43px;
+            cursor: pointer;
+        }
+
+        #Profile {
+            position: absolute;
+            width: 42px;
+            height: 36px;
+            margin-top: 0;
+            margin-left: 9px;
+            border-radius: 32px;
+        }
+
+        .Account {
+            display: none;
+        }
+
+        .cover2:hover .Account {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            margin-top: 49px;
+            width: 93px;
+            text-align: center;
+            margin-left: -23px;
+            background: black;
+            color: white;
+            height: 25px;
+            font-size: 20px;
+            border-radius: 6px;
+            font-family: math;
+            z-index: 8000;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Leaft side bar */
+        #L-sidebar {
+            position: absolute;
+            border: 1px solid;
+            margin: 47px 0 0 -154px;
+            width: 58px;
+            height: 568px;
+            border-right: 1px solid lightgrey;
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Home Icon  */
+        #border-1 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 7px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Home {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-1:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border {
+            display: none;
+        }
+
+        #titel {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-1:hover #sub-border {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 63px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Account Icon  */
+        #border-2 {
+            position: absolute;
+            width: 49px;
+            height: 45px;
+            margin: 48px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Account {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #border-2:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-1 {
+            display: none;
+        }
+
+        #titel-1 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-2:hover #sub-border-1 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir {
+            position: absolute;
+            width: 50px;
+            margin: 96px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the watch  */
+        #border-3 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 101px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Watch {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-3:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-2 {
+            display: none;
+        }
+
+        #titel-2 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-3:hover #sub-border-2 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 63px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Friends  */
+        #border-4 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 142px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Friend {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-4:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-3 {
+            display: none;
+        }
+
+        #titel-3 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-4:hover #sub-border-3 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Market  */
+        #border-5 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 183px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Market {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-5:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-4 {
+            display: none;
+        }
+
+        #titel-4 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-5:hover #sub-border-4 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Gaming  */
+        #border-6 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 224px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Gaming {
+            position: absolute;
+            margin: 5px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-6:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-5 {
+            display: none;
+        }
+
+        #titel-5 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-6:hover #sub-border-5 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Gaming  */
+        #border-7 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 265px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #See-All {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+        }
+
+        #border-7:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #sub-border-6 {
+            display: none;
+        }
+
+        #titel-6 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #border-7:hover #sub-border-6 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-1 {
+            position: absolute;
+            width: 50px;
+            margin: 307px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-1  */
+        #account-1 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 314px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Ace {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-1:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name {
+            display: none;
+        }
+
+        #Name-1 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-1:hover #Account-name {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 95px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-2  */
+        #account-2 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 357px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Sec {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-2:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-1 {
+            display: none;
+        }
+
+        #Name-2 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-2:hover #Account-name-1 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background-color: black;
+            z-index: 500;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the account-3  */
+        #account-3 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 400px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Tri {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-3:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-2 {
+            display: none;
+        }
+
+        #Name-3 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-3:hover #Account-name-2 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 75px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the See All Groups  */
+        #account-4 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 443px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Poly {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-4:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-3 {
+            display: none;
+        }
+
+        #Name-4 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-4:hover #Account-name-3 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 125px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the line  */
+        #lakir-2 {
+            position: absolute;
+            width: 50px;
+            margin: 485px 0 0 4px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the See All Groups  */
+        #account-5 {
+            position: absolute;
+            width: 49px;
+            height: 36px;
+            margin: 505px 0 0 4px;
+            border-radius: 8px;
+        }
+
+        #Penta {
+            position: absolute;
+            margin: 3px 0 0 8px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 34px;
+        }
+
+        #account-5:hover {
+            background-color: rgb(237, 236, 236);
+            cursor: pointer;
+        }
+
+        #Account-name-4 {
+            display: none;
+        }
+
+        #Name-5 {
+            position: absolute;
+            color: white;
+            margin: 5px 0 0 10px;
+            font-family: math;
+            z-index: 500;
+        }
+
+        #account-5:hover #Account-name-4 {
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            width: 125px;
+            height: 27px;
+            margin: 5px 0 0 64px;
+            border-radius: 5px;
+            background: transparent;
+            background-color: black;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Middel Leaft side bar */
+        #ML-sidebar {
+            position: absolute;
+            border: 1px solid;
+            width: 360px;
+            height: 568px;
+            margin: 3px 0 0 48px;
+            border-top: none;
+            border-bottom: none;
+            border-left: none;
+            border-right: 1px solid lightgrey;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Leaft arrow (<--)  */
+        #round {
+            position: absolute;
+            border: none;
+            margin: 18px 0 0 17px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        #head {
+            position: absolute;
+            margin: 15px 0 0 10px;
+            width: 9px;
+            height: 9px;
+            transform: rotate(45deg);
+            border-bottom: 1px solid rgb(141, 141, 141);
+            border-left: 1px solid rgb(141, 141, 141);
+        }
+
+        #tail {
+            position: absolute;
+            width: 20px;
+            margin: 19px 0 0 9px;
+            border-top: 1px solid rgb(141, 141, 141);
+            border-bottom: 1px solid rgb(141, 141, 141);
+        }
+
+        #round:hover {
+            background-color: rgb(223, 223, 223);
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the friends  */
+        #friends {
+            position: absolute;
+            margin: 16px 0 0 86px;
+            font-size: 12px;
+            color: gray;
+        }
+
+        #friends:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the heading */
+        #heading {
+            position: absolute;
+            margin: 34px 0 0 85px;
+            font-size: 27px;
+            font-style: revert;
+            font-weight: 700;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the peopel you may know  */
+        #label {
+            position: absolute;
+            margin: 80px 0 0 23px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-1  */
+        #border101 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 154px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-101 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name101 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border101:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-2  */
+        #border102 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 250px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-102 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name102 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-1 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-1 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border102:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-3  */
+        #border103 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 346px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-103 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name103 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-2 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-2 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border103:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-4  */
+        #border104 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 442px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-104 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name104 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-3 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-3 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border104:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-5  */
+        #border105 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 538px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-105 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name105 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-4 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-4 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border105:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-6  */
+        #border106 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 634px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-106 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name106 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-5 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-5 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border106:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-7  */
+        #border107 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 730px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-107 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name107 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-6 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-6 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border107:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-8  */
+        #border108 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 826px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-108 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name108 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-7 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-7 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border108:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-9  */
+        #border109 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 922px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-109 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name109 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-8 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-8 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border109:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-10  */
+        #border110 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1018px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-110 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name110 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-9 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-9 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border110:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-11  */
+        #border111 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1114px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-111 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name111 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-10 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-10 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border111:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-12  */
+        #border112 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1210px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-112 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name112 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-11 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-11 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border112:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-13  */
+        #border113 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1306px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-113 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name113 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-12 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-12 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border113:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-14  */
+        #border114 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1402px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-114 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name114 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-13 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-13 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border114:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-15  */
+        #border115 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1498px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-115 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name115 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-14 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-14 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border115:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-16  */
+        #border116 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1594px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-116 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name116 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-15 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-15 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border116:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-17  */
+        #border117 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1690px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-117 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name117 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-16 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-16 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border117:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-18  */
+        #border118 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1786px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-118 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name118 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-17 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-17 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border118:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-19  */
+        #border119 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1882px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-119 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name119 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-18 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-18 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border119:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-20  */
+        #border120 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 1978px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-120 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name120 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-19 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-19 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border120:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-21  */
+        #border121 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2074px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-121 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name121 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-20 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-20 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border121:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-22  */
+        #border122 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2170px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-122 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name122 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-21 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-21 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border122:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-23  */
+        #border123 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2266px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-123 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name123 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-22 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-22 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border123:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-24  */
+        #border124 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2362px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-124 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name124 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-23 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-23 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border124:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-25  */
+        #border125 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2458px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-125 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name125 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-24 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-24 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border125:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-26  */
+        #border126 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2554px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-126 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name126 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-25 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-25 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border126:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-27  */
+        #border127 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2650px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-127 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name127 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-26 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-26 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border127:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-28  */
+        #border128 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2746px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-128 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name128 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-27 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-27 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border128:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-29  */
+        #border129 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2842px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-129 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name129 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-28 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-28 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border129:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-30  */
+        #border130 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 2938px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-130 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name130 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-29 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-29 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border130:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-31  */
+        #border131 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 3034px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-131 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name131 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-30 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-30 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border131:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-32  */
+        #border132 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 3130px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-132 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name132 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-31 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-31 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border132:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-33  */
+        #border133 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 3226px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-133 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name133 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-32 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-32 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border133:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-34  */
+        #border134 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 3322px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-134 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name134 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-33 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-33 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border134:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Requests-35  */
+        #border135 {
+            position: absolute;
+            width: 327px;
+            height: 88px;
+            margin: 3418px 0 0 15px;
+            border-radius: 9px;
+        }
+
+        #pic-135 {
+            position: absolute;
+            margin: 7px 0 0 6px;
+            width: 63px;
+            height: 62px;
+            border-radius: 37px;
+        }
+
+        #Name135 {
+            position: absolute;
+            margin: 11px 0 0 94px;
+            font-size: 21px;
+        }
+
+        #ok-34 {
+            position: absolute;
+            margin: 45px 0 0 95px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(17, 128, 255);
+            border: none;
+            outline: none;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #no-34 {
+            position: absolute;
+            margin: 45px 0 0 211px;
+            width: 106px;
+            height: 31px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(197, 197, 197);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        #border135:hover {
+            background-color: rgb(227, 227, 227);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------- */
+        /* Manage the Right side bar */
+        #R-sidebar {
+            position: absolute;
+            border: 1px solid;
+            margin: 3px 0 0 408px;
+            width: 948px;
+            height: 568px;
+            border-left: 1px solid lightgray;
+            border-top: none;
+            border-bottom: none;
+            border-right: none;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #people {
+            width: 210px;
+            margin: auto;
+            display: block;
+            margin-top: 145px;
+        }
+
+        #footer {
+            position: absolute;
+            font-size: 23px;
+            font-weight: 700;
+            margin: 5px 0 0 265px;
+            color: rgb(135, 135, 135);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Construction of Header+Border  -->
+    <div class="header"></div>
+
+    <!-- Construction of Facebook logo  -->
+    <a href="https://www.facebook.com/"><img src="facebook-logo-1.png" alt="Facebook-logo" id="Facebook-logo"></a>
+
+    <!-- Construction of search-icon  -->
+    <img src="sreach (3).png" alt="search-icon" id="Search-icon">
+
+    <!-- Construction of Search-BAR  -->
+    <input type="url" placeholder="Search Facebook" id="Search-BAR">
+
+    <!-- Construction of combine-notification  -->
+    <div class="cover"><img src="Massenger-logo.png" id="Massenger-logo">
+        <div class="Message">Messenger</div>
+    </div>
+
+    <div class="cover1"><img src="Notification-logo.png" id="Notification-logo">
+        <div class="Notification">Notification</div>
+    </div>
+
+    <div class="cover2"><img src="WALLPAPER.png" id="Profile">
+        <div class="Account">Account</div>
+    </div>
+
+    <!-- Construction of Leaft side bar  -->
+    <dvi id="L-sidebar">
+
+        <!-- Construction of Home-icon  -->
+        <div id="border-1">
+            <img src="Home.png" id="Home">
+            <div id="sub-border"><span id="titel">Home</span></div>
+        </div>
+
+        <!-- Construction of Account-icon  -->
+        <div id="border-2">
+            <img src="WALLPAPER.png" id="Account">
+            <div id="sub-border-1"><span id="titel-1">Account</span></div>
+        </div>
+
+        <!-- Construction of Line  -->
+        <hr id="lakir">
+
+        <!-- Construction of Watch -->
+        <div id="border-3">
+            <img src="video.png" id="Watch">
+            <div id="sub-border-2"><span id="titel-2">Watch</span></div>
+        </div>
+
+        <!-- Construction of Friends -->
+        <div id="border-4">
+            <img src="Contact.png" id="Friend">
+            <div id="sub-border-3"><span id="titel-3">Friends</span></div>
+        </div>
+
+        <!-- Construction of Market-icon -->
+        <div id="border-5">
+            <img src="Market-icon.png" id="Market">
+            <div id="sub-border-4"><span id="titel-4">Market</span></div>
+        </div>
+
+        <!-- Construction of Gaming -->
+        <div id="border-6">
+            <img src="Game-pad.png" id="Gaming">
+            <div id="sub-border-5"><span id="titel-5">Gaming</span></div>
+        </div>
+
+        <!-- Construction of See All -->
+        <div id="border-7">
+            <img src="See-all.png" id="See-All">
+            <div id="sub-border-6"><span id="titel-6">See All</span></div>
+        </div>
+
+        <!-- Construction line -->
+        <hr id="lakir-1">
+
+        <!-- Construction of Account-1  -->
+        <div id="account-1">
+            <img src="Tobirama Senju.jpg" id="Ace">
+            <div id="Account-name"><span id="Name-1">Tobirama Senju</span></div>
+        </div>
+
+        <!-- Construction of Account-2  -->
+        <div id="account-2">
+            <img src="Temari.jpg" id="Sec">
+            <div id="Account-name-1"><span id="Name-2">Temari</span></div>
+        </div>
+
+        <!-- Construction of Account-3  -->
+        <div id="account-3">
+            <img src="Tanjiro.jpg" id="Tri">
+            <div id="Account-name-2"><span id="Name-3">Tanjiro</span></div>
+        </div>
+
+        <!-- Construction of See All Groups  -->
+        <div id="account-4">
+            <img src="Contact.png" id="Poly">
+            <div id="Account-name-3"><span id="Name-4">See All Groups</span></div>
+        </div>
+
+        <!-- Construction line -->
+        <hr id="lakir-2">
+
+        <!-- Construction of See All Shortcut  -->
+        <div id="account-5">
+            <img src="short-cut.png" id="Penta">
+            <div id="Account-name-4"><span id="Name-5">See All Shortcut</span></div>
+        </div>
+    </dvi>
+
+    <!-- Construction of Middel left side Bar -->
+    <div id="ML-sidebar">
+
+        <!-- Construction of Leaft arrow (<--)  -->
+        <div id="round">
+            <div id="head"></div>
+            <div id="tail"></div>
+        </div>
+
+        <!-- Construction of Friends option  -->
+        <a href="friends.html"><span id="friends">Friends</span></a>
+
+        <!-- Construction of Heading -->
+        <span id="heading">Suggestion</span>
+
+
+        <!-- Construction of 3 friend requests  -->
+        <span id="label">peopel you may know</span>
+
+
+        <!-- Construction of Requests-1  -->
+        <div id="border101">
+            <img src="Hashirama Senju.jpg" id="pic-101">
+            <span id="Name101">Hashirama Senju</span>
+            <button id="ok">Add Friend</button>
+            <button id="no">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-2  -->
+        <div id="border102">
+            <img src="Kokushibo.jpg" id="pic-102">
+            <span id="Name102">Kokushibo</span>
+            <button id="ok-1">Add Friend</button>
+            <button id="no-1">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-3  -->
+        <div id="border103">
+            <img src="Nezuko.jpg" id="pic-103">
+            <span id="Name103">Nezuko</span>
+            <button id="ok-2">Add Friend</button>
+            <button id="no-2">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-4  -->
+        <div id="border104">
+            <img src="Gara.jpg" id="pic-104">
+            <span id="Name104">Gara</span>
+            <button id="ok-3">Add Friend</button>
+            <button id="no-3">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-5  -->
+        <div id="border105">
+            <img src="Gojo.jpg" id="pic-105">
+            <span id="Name105">Gojo</span>
+            <button id="ok-4">Add Friend</button>
+            <button id="no-4">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-6  -->
+        <div id="border106">
+            <img src="Hinata Hyuga.jpg" id="pic-106">
+            <span id="Name106">Hinata Hyuga</span>
+            <button id="ok-5">Add Friend</button>
+            <button id="no-5">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-7  -->
+        <div id="border107">
+            <img src="Jiraya.png" id="pic-107">
+            <span id="Name107">Jiraya</span>
+            <button id="ok-6">Add Friend</button>
+            <button id="no-6">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-8  -->
+        <div id="border108">
+            <img src="Kabuto Yakushi.jpg" id="pic-108">
+            <span id="Name108">Kabuto Yakushi</span>
+            <button id="ok-7">Add Friend</button>
+            <button id="no-7">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-9  -->
+        <div id="border109">
+            <img src="Kakashi Hatake.png" id="pic-109">
+            <span id="Name109">Kakashi Hatake</span>
+            <button id="ok-8">Add Friend</button>
+            <button id="no-8">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-10  -->
+        <div id="border110">
+            <img src="Konohamaru Sarutobi.jpg" id="pic-110">
+            <span id="Name110">Konohamaru Sarutobi</span>
+            <button id="ok-9">Add Friend</button>
+            <button id="no-9">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-11  -->
+        <div id="border111">
+            <img src="L.jpg" id="pic-111">
+            <span id="Name111">L</span>
+            <button id="ok-10">Add Friend</button>
+            <button id="no-10">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-12  -->
+        <div id="border112">
+            <img src="Light.jpg" id="pic-112">
+            <span id="Name112">Light</span>
+            <button id="ok-11">Add Friend</button>
+            <button id="no-11">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-13  -->
+        <div id="border113">
+            <img src="Madara Uchiha.png" id="pic-113">
+            <span id="Name113">Madara Uchiha</span>
+            <button id="ok-12">Add Friend</button>
+            <button id="no-12">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-14  -->
+        <div id="border114">
+            <img src="Muzan.jpg" id="pic-114">
+            <span id="Name114">Muzan</span>
+            <button id="ok-13">Add Friend</button>
+            <button id="no-13">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-15 -->
+        <div id="border115">
+            <img src="Nagato.jpg" id="pic-115">
+            <span id="Name115">Nagato</span>
+            <button id="ok-14">Add Friend</button>
+            <button id="no-14">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-16  -->
+        <div id="border116">
+            <img src="Naruto Uzumaki.jpg" id="pic-116">
+            <span id="Name116">Naruto Uzumaki</span>
+            <button id="ok-15">Add Friend</button>
+            <button id="no-15">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-17  -->
+        <div id="border117">
+            <img src="Neji Hyuga.jpg" id="pic-117">
+            <span id="Name117">Neji Hyuga</span>
+            <button id="ok-16">Add Friend</button>
+            <button id="no-16">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-18  -->
+        <div id="border118">
+            <img src="Obito Uchiha.png" id="pic-118">
+            <span id="Name118">Obito Uchiha</span>
+            <button id="ok-17">Add Friend</button>
+            <button id="no-17">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-19  -->
+        <div id="border119">
+            <img src="Orochimaru.jpg" id="pic-119">
+            <span id="Name119">Orochimaru</span>
+            <button id="ok-18">Add Friend</button>
+            <button id="no-18">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-20  -->
+        <div id="border120">
+            <img src="Rengoko.jpg" id="pic-120">
+            <span id="Name120">Rengoko</span>
+            <button id="ok-19">Add Friend</button>
+            <button id="no-19">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-21  -->
+        <div id="border121">
+            <img src="Rock Lee.jpg" id="pic-121">
+            <span id="Name121">Rock Lee</span>
+            <button id="ok-20">Add Friend</button>
+            <button id="no-20">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-22  -->
+        <div id="border122">
+            <img src="Ryuk.jpg" id="pic-122">
+            <span id="Name122">Ryuk</span>
+            <button id="ok-21">Add Friend</button>
+            <button id="no-21">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-23  -->
+        <div id="border123">
+            <img src="Sai.jpg" id="pic-123">
+            <span id="Name123">Sai</span>
+            <button id="ok-22">Add Friend</button>
+            <button id="no-22">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-24  -->
+        <div id="border124">
+            <img src="Shikamaru Nara.jpg" id="pic-124">
+            <span id="Name124">Shikamaru Nara</span>
+            <button id="ok-23">Add Friend</button>
+            <button id="no-23">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-25  -->
+        <div id="border125">
+            <img src="Shino Aburame.jpg" id="pic-125">
+            <span id="Name125">Shino Aburame</span>
+            <button id="ok-24">Add Friend</button>
+            <button id="no-24">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-26  -->
+        <div id="border126">
+            <img src="Shinobu.jpg" id="pic-126">
+            <span id="Name126">Shinobu</span>
+            <button id="ok-25">Add Friend</button>
+            <button id="no-25">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-27  -->
+        <div id="border127">
+            <img src="sukuna.jpg" id="pic-127">
+            <span id="Name127">sukuna</span>
+            <button id="ok-26">Add Friend</button>
+            <button id="no-26">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-28  -->
+        <div id="border128">
+            <img src="Tanjiro.jpg" id="pic-128">
+            <span id="Name128">Tanjiro.jpg</span>
+            <button id="ok-27">Add Friend</button>
+            <button id="no-27">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-29  -->
+        <div id="border129">
+            <img src="Temari.jpg" id="pic-129">
+            <span id="Name129">Temari</span>
+            <button id="ok-28">Add Friend</button>
+            <button id="no-28">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-30  -->
+        <div id="border130">
+            <img src="Tengen.jpg" id="pic-130">
+            <span id="Name130">Tengen</span>
+            <button id="ok-29">Add Friend</button>
+            <button id="no-29">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-31  -->
+        <div id="border131">
+            <img src="Tobirama Senju.jpg" id="pic-131">
+            <span id="Name131">Tobirama Senju</span>
+            <button id="ok-30">Add Friend</button>
+            <button id="no-30">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-32  -->
+        <div id="border132">
+            <img src="Tomiko.jpg" id="pic-132">
+            <span id="Name132">Tomiko</span>
+            <button id="ok-31">Add Friend</button>
+            <button id="no-31">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-33  -->
+        <div id="border133">
+            <img src="Yamato.jpg" id="pic-133">
+            <span id="Name133">Yamato</span>
+            <button id="ok-32">Add Friend</button>
+            <button id="no-32">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-34  -->
+        <div id="border134">
+            <img src="Yorichi.jpg" id="pic-134">
+            <span id="Name134">Yorichi</span>
+            <button id="ok-33">Add Friend</button>
+            <button id="no-33">Remove</button>
+        </div>
+
+        <!-- Construction of Requests-35  -->
+        <div id="border135">
+            <img src="Zinestu.jpg" id="pic-135">
+            <span id="Name135">Zinestu</span>
+            <button id="ok-34">Add Friend</button>
+            <button id="no-34">Remove</button>
+        </div>
+    </div>
+
+
+    <!-- Construction of Right side bar -->
+    <div id="R-sidebar">
+        <img src="people.png" id="people">
+        <span id="footer">select people's names to preview their profile</span>
+    </div>
+</body>
+
+</html>
